@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node ace test"
+    "test": "node ace test",
+    "build": "node ace nuxt:build",
+    "dev": "nodemon --watch app --watch config --watch start --watch .env -x node server.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore resources"
   },
   "keywords": [
     "adonisjs",
@@ -25,9 +28,21 @@
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/session": "^1.0.27",
-    "@adonisjs/shield": "^1.0.8"
+    "@adonisjs/shield": "^1.0.8",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2"
+  },
   "autoload": {
     "App": "./app"
   }
